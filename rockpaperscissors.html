@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  
+</head>
+<body>
+
+  <script>
+   let pick = [ "rock","paper","scissors"];
+
+   //returns random value from pick variable
+   function computerPlay() {
+      let computerSelection = pick[ Math.floor(Math.random() * pick.length ) ]
+        return computerSelection
+    }
+
+    //prompts user for input and assigns input to variable
+    function playerPlay() {
+      let playerSelection = prompt("What is your pick? Rock, paper, or scissors?");
+        return playerSelection
+    }
+
+    //assigns functions to variables
+    //variables will be used as parameters in later function
+    let playerSelection = playerPlay();
+    let computerSelection = computerPlay();
+
+
+    
+
+    //compares playerSelection to computerSelection
+    //returns string based on compared values
+    function playRound() {
+      
+        if (playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock" ||  playerSelection == "paper" && computerSelection == "rock") {
+            alert( `You win! ${playerSelection} beats ${computerSelection}!`);
+        } else if (playerSelection == "rock" && computerSelection == "rock" || playerSelection == "paper" && computerSelection ==        "paper" || playerSelection == "scissors" && computerSelection == "scissors") {
+          alert("It's a tie!!!");
+        } else { alert(`You lose! ${computerSelection} beats ${playerSelection}!`);
+      }
+    }
+    let player = playerSelection //.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
+    let computer = computerSelection //.charAt(0).toUpperCase() + computerSelection.slice(1).toLowerCase();
+    playRound(playerSelection, computerSelection);
+    
+
+  </script>
+</body>
+</html>
